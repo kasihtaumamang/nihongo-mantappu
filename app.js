@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHiragana();
     loadKatakana();
     loadVocabulary();
+    initCategoryButtons();
     initPracticeMode();
     initQuiz();
 });
@@ -154,7 +155,7 @@ function loadHiragana() {
     const container = document.getElementById('hiraganaContent');
     container.innerHTML = '';
     
-    hiraganaData.forEach((item, index) => {
+    hiraganaData.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'character-card';
         if (learnedHiragana.has(item.char)) {
@@ -176,7 +177,7 @@ function loadKatakana() {
     const container = document.getElementById('katakanaContent');
     container.innerHTML = '';
     
-    katakanaData.forEach((item, index) => {
+    katakanaData.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'character-card';
         if (learnedKatakana.has(item.char)) {
@@ -333,14 +334,14 @@ function loadVocabulary(category = 'all') {
     });
 }
 
-// Category buttons
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize category buttons
+function initCategoryButtons() {
     document.querySelectorAll('.category-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             loadVocabulary(btn.dataset.category);
         });
     });
-});
+}
 
 // Quiz
 function initQuiz() {
