@@ -27,58 +27,58 @@ const katakanaData = [
 
 const vocabularyData = [
     // Greetings
-    { japanese: 'こんにちは', romaji: 'konnichiwa', english: 'Hello', category: 'greetings' },
-    { japanese: 'おはよう', romaji: 'ohayou', english: 'Good morning', category: 'greetings' },
-    { japanese: 'こんばんは', romaji: 'konbanwa', english: 'Good evening', category: 'greetings' },
-    { japanese: 'さようなら', romaji: 'sayounara', english: 'Goodbye', category: 'greetings' },
-    { japanese: 'ありがとう', romaji: 'arigatou', english: 'Thank you', category: 'greetings' },
-    { japanese: 'すみません', romaji: 'sumimasen', english: 'Excuse me', category: 'greetings' },
-    { japanese: 'ごめんなさい', romaji: 'gomennasai', english: 'I\'m sorry', category: 'greetings' },
-    { japanese: 'おやすみなさい', romaji: 'oyasuminasai', english: 'Good night', category: 'greetings' },
+    { japanese: 'こんにちは', romaji: 'konnichiwa', english: 'Hello', category: 'greetings', level: 'N5' },
+    { japanese: 'おはよう', romaji: 'ohayou', english: 'Good morning', category: 'greetings', level: 'N5' },
+    { japanese: 'こんばんは', romaji: 'konbanwa', english: 'Good evening', category: 'greetings', level: 'N5' },
+    { japanese: 'さようなら', romaji: 'sayounara', english: 'Goodbye', category: 'greetings', level: 'N5' },
+    { japanese: 'ありがとう', romaji: 'arigatou', english: 'Thank you', category: 'greetings', level: 'N5' },
+    { japanese: 'すみません', romaji: 'sumimasen', english: 'Excuse me', category: 'greetings', level: 'N5' },
+    { japanese: 'ごめんなさい', romaji: 'gomennasai', english: 'I\'m sorry', category: 'greetings', level: 'N4' },
+    { japanese: 'おやすみなさい', romaji: 'oyasuminasai', english: 'Good night', category: 'greetings', level: 'N5' },
     
     // Numbers
-    { japanese: '一', romaji: 'ichi', english: 'One', category: 'numbers' },
-    { japanese: '二', romaji: 'ni', english: 'Two', category: 'numbers' },
-    { japanese: '三', romaji: 'san', english: 'Three', category: 'numbers' },
-    { japanese: '四', romaji: 'shi/yon', english: 'Four', category: 'numbers' },
-    { japanese: '五', romaji: 'go', english: 'Five', category: 'numbers' },
-    { japanese: '六', romaji: 'roku', english: 'Six', category: 'numbers' },
-    { japanese: '七', romaji: 'shichi/nana', english: 'Seven', category: 'numbers' },
-    { japanese: '八', romaji: 'hachi', english: 'Eight', category: 'numbers' },
-    { japanese: '九', romaji: 'kyuu/ku', english: 'Nine', category: 'numbers' },
-    { japanese: '十', romaji: 'juu', english: 'Ten', category: 'numbers' },
+    { japanese: '一', romaji: 'ichi', english: 'One', category: 'numbers', level: 'N5' },
+    { japanese: '二', romaji: 'ni', english: 'Two', category: 'numbers', level: 'N5' },
+    { japanese: '三', romaji: 'san', english: 'Three', category: 'numbers', level: 'N5' },
+    { japanese: '四', romaji: 'shi/yon', english: 'Four', category: 'numbers', level: 'N5' },
+    { japanese: '五', romaji: 'go', english: 'Five', category: 'numbers', level: 'N5' },
+    { japanese: '六', romaji: 'roku', english: 'Six', category: 'numbers', level: 'N5' },
+    { japanese: '七', romaji: 'shichi/nana', english: 'Seven', category: 'numbers', level: 'N5' },
+    { japanese: '八', romaji: 'hachi', english: 'Eight', category: 'numbers', level: 'N5' },
+    { japanese: '九', romaji: 'kyuu/ku', english: 'Nine', category: 'numbers', level: 'N5' },
+    { japanese: '十', romaji: 'juu', english: 'Ten', category: 'numbers', level: 'N5' },
     
     // Colors
-    { japanese: '赤', romaji: 'aka', english: 'Red', category: 'colors' },
-    { japanese: '青', romaji: 'ao', english: 'Blue', category: 'colors' },
-    { japanese: '黄色', romaji: 'kiiro', english: 'Yellow', category: 'colors' },
-    { japanese: '緑', romaji: 'midori', english: 'Green', category: 'colors' },
-    { japanese: '白', romaji: 'shiro', english: 'White', category: 'colors' },
-    { japanese: '黒', romaji: 'kuro', english: 'Black', category: 'colors' },
-    { japanese: 'ピンク', romaji: 'pinku', english: 'Pink', category: 'colors' },
-    { japanese: 'オレンジ', romaji: 'orenji', english: 'Orange', category: 'colors' },
+    { japanese: '赤', romaji: 'aka', english: 'Red', category: 'colors', level: 'N5' },
+    { japanese: '青', romaji: 'ao', english: 'Blue', category: 'colors', level: 'N5' },
+    { japanese: '黄色', romaji: 'kiiro', english: 'Yellow', category: 'colors', level: 'N4' },
+    { japanese: '緑', romaji: 'midori', english: 'Green', category: 'colors', level: 'N4' },
+    { japanese: '白', romaji: 'shiro', english: 'White', category: 'colors', level: 'N5' },
+    { japanese: '黒', romaji: 'kuro', english: 'Black', category: 'colors', level: 'N5' },
+    { japanese: 'ピンク', romaji: 'pinku', english: 'Pink', category: 'colors', level: 'N4' },
+    { japanese: 'オレンジ', romaji: 'orenji', english: 'Orange', category: 'colors', level: 'N4' },
     
     // Family
-    { japanese: '父', romaji: 'chichi', english: 'Father', category: 'family' },
-    { japanese: '母', romaji: 'haha', english: 'Mother', category: 'family' },
-    { japanese: '兄', romaji: 'ani', english: 'Older brother', category: 'family' },
-    { japanese: '姉', romaji: 'ane', english: 'Older sister', category: 'family' },
-    { japanese: '弟', romaji: 'otouto', english: 'Younger brother', category: 'family' },
-    { japanese: '妹', romaji: 'imouto', english: 'Younger sister', category: 'family' },
-    { japanese: '祖父', romaji: 'sofu', english: 'Grandfather', category: 'family' },
-    { japanese: '祖母', romaji: 'sobo', english: 'Grandmother', category: 'family' },
+    { japanese: '父', romaji: 'chichi', english: 'Father', category: 'family', level: 'N5' },
+    { japanese: '母', romaji: 'haha', english: 'Mother', category: 'family', level: 'N5' },
+    { japanese: '兄', romaji: 'ani', english: 'Older brother', category: 'family', level: 'N4' },
+    { japanese: '姉', romaji: 'ane', english: 'Older sister', category: 'family', level: 'N4' },
+    { japanese: '弟', romaji: 'otouto', english: 'Younger brother', category: 'family', level: 'N4' },
+    { japanese: '妹', romaji: 'imouto', english: 'Younger sister', category: 'family', level: 'N4' },
+    { japanese: '祖父', romaji: 'sofu', english: 'Grandfather', category: 'family', level: 'N3' },
+    { japanese: '祖母', romaji: 'sobo', english: 'Grandmother', category: 'family', level: 'N3' },
     
     // Food
-    { japanese: 'ご飯', romaji: 'gohan', english: 'Rice/Meal', category: 'food' },
-    { japanese: '水', romaji: 'mizu', english: 'Water', category: 'food' },
-    { japanese: 'パン', romaji: 'pan', english: 'Bread', category: 'food' },
-    { japanese: '魚', romaji: 'sakana', english: 'Fish', category: 'food' },
-    { japanese: '肉', romaji: 'niku', english: 'Meat', category: 'food' },
-    { japanese: '野菜', romaji: 'yasai', english: 'Vegetables', category: 'food' },
-    { japanese: '果物', romaji: 'kudamono', english: 'Fruit', category: 'food' },
-    { japanese: 'お茶', romaji: 'ocha', english: 'Tea', category: 'food' },
-    { japanese: 'コーヒー', romaji: 'koohii', english: 'Coffee', category: 'food' },
-    { japanese: '寿司', romaji: 'sushi', english: 'Sushi', category: 'food' }
+    { japanese: 'ご飯', romaji: 'gohan', english: 'Rice/Meal', category: 'food', level: 'N5' },
+    { japanese: '水', romaji: 'mizu', english: 'Water', category: 'food', level: 'N5' },
+    { japanese: 'パン', romaji: 'pan', english: 'Bread', category: 'food', level: 'N5' },
+    { japanese: '魚', romaji: 'sakana', english: 'Fish', category: 'food', level: 'N5' },
+    { japanese: '肉', romaji: 'niku', english: 'Meat', category: 'food', level: 'N5' },
+    { japanese: '野菜', romaji: 'yasai', english: 'Vegetables', category: 'food', level: 'N4' },
+    { japanese: '果物', romaji: 'kudamono', english: 'Fruit', category: 'food', level: 'N4' },
+    { japanese: 'お茶', romaji: 'ocha', english: 'Tea', category: 'food', level: 'N5' },
+    { japanese: 'コーヒー', romaji: 'koohii', english: 'Coffee', category: 'food', level: 'N5' },
+    { japanese: '寿司', romaji: 'sushi', english: 'Sushi', category: 'food', level: 'N5' }
 ];
 
 // State Management
@@ -90,6 +90,7 @@ let quizData = [];
 let currentQuizIndex = 0;
 let quizScore = 0;
 let quizType = '';
+let quizLevel = 'all';
 let flashcardData = [];
 let currentFlashcardIndex = 0;
 let flashcardType = '';
@@ -388,6 +389,15 @@ function initQuiz() {
         });
     });
     
+    document.querySelectorAll('.quiz-level-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            quizLevel = btn.dataset.level;
+            // Update active state
+            document.querySelectorAll('.quiz-level-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+    
     document.getElementById('quizQuitBtn').addEventListener('click', () => {
         endQuiz();
     });
@@ -453,15 +463,27 @@ function generateCharacterQuiz(data, count = 10) {
 
 function generateVocabularyQuiz(count = 10) {
     const questions = [];
-    const shuffled = [...vocabularyData].sort(() => Math.random() - 0.5);
+    
+    // Filter vocabulary by level if not 'all'
+    let filteredVocab = vocabularyData;
+    if (quizLevel !== 'all') {
+        filteredVocab = vocabularyData.filter(item => item.level === quizLevel);
+    }
+    
+    // If not enough items for the level, use all
+    if (filteredVocab.length < 4) {
+        filteredVocab = vocabularyData;
+    }
+    
+    const shuffled = [...filteredVocab].sort(() => Math.random() - 0.5);
     
     for (let i = 0; i < Math.min(count, shuffled.length); i++) {
         const correct = shuffled[i];
         const options = [correct.english];
         
-        // Add 3 random wrong answers
+        // Add 3 random wrong answers from the same filtered set
         while (options.length < 4) {
-            const random = vocabularyData[Math.floor(Math.random() * vocabularyData.length)];
+            const random = filteredVocab[Math.floor(Math.random() * filteredVocab.length)];
             if (!options.includes(random.english)) {
                 options.push(random.english);
             }
