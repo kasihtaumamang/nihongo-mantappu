@@ -78,7 +78,25 @@ const vocabularyData = [
     { japanese: '果物', romaji: 'kudamono', english: 'Fruit', category: 'food', level: 'N4' },
     { japanese: 'お茶', romaji: 'ocha', english: 'Tea', category: 'food', level: 'N5' },
     { japanese: 'コーヒー', romaji: 'koohii', english: 'Coffee', category: 'food', level: 'N5' },
-    { japanese: '寿司', romaji: 'sushi', english: 'Sushi', category: 'food', level: 'N5' }
+    { japanese: '寿司', romaji: 'sushi', english: 'Sushi', category: 'food', level: 'N5' },
+    
+    // N2 Level Vocabulary
+    { japanese: '感謝', romaji: 'kansha', english: 'Gratitude', category: 'greetings', level: 'N2' },
+    { japanese: '尊敬', romaji: 'sonkei', english: 'Respect', category: 'greetings', level: 'N2' },
+    { japanese: '歓迎', romaji: 'kangei', english: 'Welcome', category: 'greetings', level: 'N2' },
+    { japanese: '紫', romaji: 'murasaki', english: 'Purple', category: 'colors', level: 'N2' },
+    { japanese: '茶色', romaji: 'chairo', english: 'Brown', category: 'colors', level: 'N2' },
+    { japanese: '親戚', romaji: 'shinseki', english: 'Relatives', category: 'family', level: 'N2' },
+    { japanese: '料理', romaji: 'ryouri', english: 'Cooking', category: 'food', level: 'N2' },
+    { japanese: '食材', romaji: 'shokuzai', english: 'Ingredients', category: 'food', level: 'N2' },
+    
+    // N1 Level Vocabulary
+    { japanese: '敬語', romaji: 'keigo', english: 'Honorific language', category: 'greetings', level: 'N1' },
+    { japanese: '挨拶', romaji: 'aisatsu', english: 'Greeting/Salutation', category: 'greetings', level: 'N1' },
+    { japanese: '色彩', romaji: 'shikisai', english: 'Color/Hue', category: 'colors', level: 'N1' },
+    { japanese: '血縁', romaji: 'ketsuen', english: 'Blood relation', category: 'family', level: 'N1' },
+    { japanese: '食糧', romaji: 'shokuryou', english: 'Food provisions', category: 'food', level: 'N1' },
+    { japanese: '栄養', romaji: 'eiyou', english: 'Nutrition', category: 'food', level: 'N1' }
 ];
 
 // State Management
@@ -524,7 +542,11 @@ function generateVocabularyQuiz(count = 10) {
     // If not enough items, notify and use all
     if (filteredVocab.length < 4) {
         console.warn(`Not enough vocabulary for level ${quizLevel}, using all levels`);
-        return generateVocabularyQuiz(count); // Will use 'all' next time
+        const previousLevel = quizLevel;
+        quizLevel = 'all';
+        const result = generateVocabularyQuiz(count);
+        quizLevel = previousLevel; // Restore the original level
+        return result;
     }
     
     const shuffled = [...filteredVocab].sort(() => Math.random() - 0.5);
