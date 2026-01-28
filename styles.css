@@ -93,6 +93,7 @@ body {
     cursor: pointer;
     transition: var(--transition);
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -100,16 +101,16 @@ body {
     transform: rotate(20deg) scale(1.1);
 }
 
-.logo h1 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 .nav-link {
@@ -800,16 +801,21 @@ body {
         display: block;
     }
 
+    .nav-right {
+        position: relative;
+    }
+
     .nav-menu {
         position: absolute;
-        top: 100%;
-        left: 0;
+        top: calc(100% + 10px);
         right: 0;
         background: var(--card-bg);
         flex-direction: column;
         padding: 1rem;
         box-shadow: var(--box-shadow);
         display: none;
+        min-width: 200px;
+        border-radius: var(--border-radius);
     }
 
     .theme-toggle {

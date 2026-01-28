@@ -134,7 +134,12 @@ function initNavigation() {
 // Theme Toggle
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle.querySelector('.theme-icon');
+    const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
+    
+    if (!themeToggle || !themeIcon) {
+        console.warn('Theme toggle elements not found');
+        return;
+    }
     
     // Load saved theme preference
     const savedTheme = localStorage.getItem('theme') || 'light';
