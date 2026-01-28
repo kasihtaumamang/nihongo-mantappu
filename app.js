@@ -345,12 +345,21 @@ function checkPracticeAnswer(type) {
 }
 
 // Vocabulary
+// Helper function to filter vocabulary by level
+function filterVocabularyByLevel(vocabData, level) {
+    if (level === 'all') {
+        return vocabData;
+    }
+    return vocabData.filter(item => item.level === level);
+}
+
 function loadVocabulary(category = null, level = null) {
     // Use stored values if not provided
     if (category !== null) vocabularyCategory = category;
     if (level !== null) vocabularyLevel = level;
     
     const container = document.getElementById('vocabularyContent');
+    const messageEl = document.getElementById('noVocabMessage');
     container.innerHTML = '';
     
     // Filter by both category and level
@@ -360,22 +369,29 @@ function loadVocabulary(category = null, level = null) {
         filteredVocab = filteredVocab.filter(item => item.category === vocabularyCategory);
     }
     
-    if (vocabularyLevel !== 'all') {
-        filteredVocab = filteredVocab.filter(item => item.level === vocabularyLevel);
-    }
+    filteredVocab = filterVocabularyByLevel(filteredVocab, vocabularyLevel);
     
-    filteredVocab.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'vocab-card';
-        card.innerHTML = `
-            <div class="vocab-japanese">${item.japanese}</div>
-            <div class="vocab-romaji">${item.romaji}</div>
-            <div class="vocab-english">${item.english}</div>
-            <div class="vocab-category">${item.category}</div>
-            <div class="vocab-level">${item.level}</div>
-        `;
-        container.appendChild(card);
-    });
+    // Show message if no results
+    if (filteredVocab.length === 0) {
+        container.style.display = 'none';
+        messageEl.style.display = 'block';
+    } else {
+        container.style.display = 'grid';
+        messageEl.style.display = 'none';
+        
+        filteredVocab.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'vocab-card';
+            card.innerHTML = `
+                <div class="vocab-japanese">${item.japanese}</div>
+                <div class="vocab-romaji">${item.romaji}</div>
+                <div class="vocab-english">${item.english}</div>
+                <div class="vocab-category">${item.category}</div>
+                <div class="vocab-level">${item.level}</div>
+            `;
+            container.appendChild(card);
+        });
+    }
     
     // Update category buttons
     document.querySelectorAll('.category-btn').forEach(btn => {
@@ -493,15 +509,13 @@ function generateCharacterQuiz(data, count = 10) {
 function generateVocabularyQuiz(count = 10) {
     const questions = [];
     
-    // Filter vocabulary by level if not 'all'
-    let filteredVocab = vocabularyData;
-    if (quizLevel !== 'all') {
-        filteredVocab = vocabularyData.filter(item => item.level === quizLevel);
-    }
+    // Filter vocabulary by level
+    const filteredVocab = filterVocabularyByLevel(vocabularyData, quizLevel);
     
-    // If not enough items for the level, use all
+    // If not enough items, notify and use all
     if (filteredVocab.length < 4) {
-        filteredVocab = vocabularyData;
+        console.warn(`Not enough vocabulary for level ${quizLevel}, using all levels`);
+        return generateVocabularyQuiz(count); // Will use 'all' next time
     }
     
     const shuffled = [...filteredVocab].sort(() => Math.random() - 0.5);
@@ -684,11 +698,8 @@ function startFlashcards() {
             type: 'character'
         }));
     } else if (flashcardType === 'vocabulary') {
-        // Filter vocabulary by level
-        let filteredVocab = vocabularyData;
-        if (flashcardLevel !== 'all') {
-            filteredVocab = vocabularyData.filter(item => item.level === flashcardLevel);
-        }
+        // Filter vocabulary by level using helper function
+        const filteredVocab = filterVocabularyByLevel(vocabularyData, flashcardLevel);
         
         flashcardData = filteredVocab.map(item => ({
             front: item.japanese,
@@ -708,11 +719,8 @@ function startFlashcards() {
             type: 'character'
         }));
         
-        // Filter vocabulary by level
-        let filteredVocab = vocabularyData;
-        if (flashcardLevel !== 'all') {
-            filteredVocab = vocabularyData.filter(item => item.level === flashcardLevel);
-        }
+        // Filter vocabulary by level using helper function
+        const filteredVocab = filterVocabularyByLevel(vocabularyData, flashcardLevel);
         
         const vocabCards = filteredVocab.map(item => ({
             front: item.japanese,
